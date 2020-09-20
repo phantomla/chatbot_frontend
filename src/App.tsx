@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  HashRouter,
+  BrowserRouter,
   Switch,
   Route,
 } from 'react-router-dom';
@@ -16,18 +16,17 @@ const loading = () => (
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <React.Suspense fallback={loading()}>
         <Switch>
           {
-            routes.map((item) => {
-              return <Route exact path="/" component={item.component} />
-              
+            routes.map((item, index) => {
+              return <Route key={`route${index}`} exact path={item.path} component={item.component} />
             })
           }
         </Switch>
       </React.Suspense>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
