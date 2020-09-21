@@ -1,12 +1,8 @@
 import React from 'react';
 
-const Home = React.lazy(() =>
-  import('./screens/Home')
-);
 
-const Flow = React.lazy(() =>
-  import('./screens/Flow')
-);
+import Home from './screens/Home'
+import Flow from './screens/Flow'
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
