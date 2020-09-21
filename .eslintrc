@@ -1,6 +1,16 @@
 {
-  "plugins": ["prettier", "@typescript-eslint"],
-  "extends": ["airbnb-typescript", "react-app", "prettier"],
+  "root": true,
+  "plugins": [
+    "prettier",
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "airbnb-typescript",
+    "react-app",
+    "prettier",
+    "airbnb/hooks",
+    "plugin:prettier/recommended"
+  ],
   "parser": "@typescript-eslint/parser",
   "globals": {
     "API_HOST_POS": true
@@ -16,7 +26,26 @@
     }
   },
   "rules": {
-    "object-curly-spacing": ["warn", "always"],
+    "curly": [
+      "error",
+      "all"
+    ],
+    "prettier/prettier": "error",
+    "valid-jsdoc": 0,
+    "react/prop-types": 0,
+    "tsdoc/syntax": "error",
+    "max-lines-per-function": [
+      "error",
+      300
+    ],
+    "@typescript-eslint/semi": [
+      "error",
+      "never"
+    ],
+    "object-curly-spacing": [
+      "error",
+      "never"
+    ],
     "no-unused-vars": [
       "warn",
       {
@@ -47,7 +76,16 @@
       }
     ],
     "react/jsx-key": "error",
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".tsx"
+        ]
+      }
+    ],
     "import/no-extraneous-dependencies": [
       "error",
       {
@@ -69,7 +107,6 @@
     "react/jsx-props-no-spreading": "off",
     "import/prefer-default-export": "off",
     "react/jsx-boolean-value": "off",
-    "react/prop-types": "off",
     "react/no-unescaped-entities": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-wrap-multilines": "off",
